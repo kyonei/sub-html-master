@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Test Page For SubHtml</title>
+    <meta charset="UTF-8">
+    <script type="text/javascript" src="../index.js"></script>
+    <script type="text/javascript">
+        function cutHtml() {
+            var src = document.getElementById("fromDiv").innerHTML;
+            var o = subHtml(src, { limit: 150, moreText: "...", delUnMatchTags: false });
+            document.getElementById("toDiv").innerHTML = o.html;
+        }
+    </script>
+</head>
+
+<body onload="cutHtml();">
+    <div id="fromDiv">
+        <h1>标题二</h1>
+        <pre>
+        <code> String s = new String();</code>
+        </pre>
+        <table>
+            <tr>
+                <th>1</th>
+                <th>2</th>
+            </tr>
+            <tr>
+                <td>锋科技了束带结发历史的会计法落实到飞</td>
+                <td>锋科技了束带结发历史的会计法落实到飞</td>
+            </tr>
+        </table>
+    </div>
+    <br>
+    <div id="toDiv"></div>
+</body>
+
+</html>
